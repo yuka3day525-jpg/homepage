@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>トップページ:べるとまろについて</title>
+<meta name="viwepornt" content="width=device=widch">
+<link rel="stylesheet" href="practice1.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <h1 class="logo"><a href="index.html">BEL & MARO</a></h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="profile.html">PROFILE</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="favorite.html">FAVORITE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="contact-page">
+
+        <section class="contact-title">
+            <p class="contact-english">Contact</p>
+
+            <h2>お問い合わせ</h2>
+
+            <p class="contact-lead">
+                ベルとまろについてのご質問やメッセージをお送りください。
+                <br>
+                下記のフォームに必要事項をご入力ください。
+            </p>
+        </section>
+
+        <section class="contact-form-area">
+
+            <form action="#" method="post">
+               <div class="form-item">
+                    <label for="name">お名前<span class="required">必須</span></label>
+                    <input type="text" id="name" name="name" placeholder="例：山田 花子" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="email">メールアドレス<span class="required">必須</span></label>
+                    <input type="email" id="email" name="email" placeholder="例：example@email.com" required>
+                </div>
+
+                <div class="form-item">
+                    <p class="form-label">お問い合わせ内容<span class="required">必須</span></p>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                        <input type="radio" name="category" value="bell" required>ベルについて</label>
+
+                        <label class="radio-label">
+                        <input type="radio" name="category" value="maro">まろについて</label>
+
+                        <label class="radio-label">
+                        <input type="radio" name="category" value="site">このサイトについて</label>
+
+                        <label class="radio-label">
+                        <input type="radio" name="category" value="other">その他</label>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label for="message">メッセージ<span class="required">必須</span></label>
+                    <textarea id="message" name="message" placeholder="お問い合わせ内容をご入力ください" required></textarea>
+                </div>
+
+                <div class="privacy-check">
+                    <label>
+                    <input type="checkbox" name="privacy" required>入力内容を確認しました</label>
+
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit">送信する</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="contact-message">
+
+            <div class="contact-message-image">
+                <img
+                    src="images/contact-dogs.jpg"
+                    alt="ベルとまろ"
+                >
+            </div>
+
+            <div class="contact-message-text">
+                <h2>Thank you!</h2>
+
+                <p>
+                    ベルとまろのサイトをご覧いただき、
+                    ありがとうございます。
+                </p>
+
+                <p>
+                    これからもベルとまろの日常や、
+                    お気に入りのものを紹介していきます。
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            <small>&copy; BEL & MARO</small>
+        </p>
+    </footer>
+
+</body>
+
+</html>

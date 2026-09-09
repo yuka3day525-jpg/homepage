@@ -1,0 +1,329 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* ↑デフォルトを16pxから10pxに変更remでの計算を楽にする */
+}
+header ul{
+    background-color: rgb(76, 68, 197);
+    color: #ffffff;
+    display: flex;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+/* ulで初期の左余白を消す */
+header li{
+    flex:1;
+    text-align: center;
+    font-size: 1.8rem;
+    border-right: 1px dotted #f1ecec;
+}
+/* flex1で6個同じ幅にする、テキストアラインで真ん中へ */
+nav ul a{
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+nav ul a:hover{
+    color: aqua;
+}
+.main{
+    background-color: rgb(210, 250, 250);
+    height: 80vh;
+    background-image: url(image/umi.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main h1{
+    margin: 8px 0;
+    width: 90%;
+    max-width: 1000px;
+    font-size: 4.2rem;
+    font-family: "Abril Fatface", serif;
+    /* margin: 10px 20px; */
+    /* display: grid;
+    grid-template-columns: 1fr; */
+}
+.main h1 span{
+    display: inline-block;
+    color: #fbfeff;
+    background-color: rgba(0, 20, 20, 0.384);
+    border-radius: 20px;
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+}
+.kiji{
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    line-height: 1.7;
+}
+/* ↑１２００を打つならmaxwidthへ、そのあとスマホ用にwidth90% */
+h2{
+    color: #2a38bd;
+    font-size: 3.5rem;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    text-shadow: 0px 20px 8px rgba(20, 2, 61, 0.4);
+}
+.Abaut img{
+    width: 350px;
+    max-width: 100%;
+    height:auto;
+}
+.kiji1 p{
+    font-size: 1.7rem;
+    padding-top:60px;
+    width: 100%;
+}
+.kiji1{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap:10px
+}
+.skill{
+    display: flex;
+    /* background-color: #8c96ed; */
+    gap: 280px;
+}
+.skill p{
+    flex:1;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #1422ef;
+    color: #ffffff;
+    border: 1px dotted #2f0bb2;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+footer{
+    height: 40px;
+    background-color: rgb(76, 68, 197);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.hoshi{
+    display: flex;
+    /* background-color: #97a0ea; */
+    gap: 280px;
+    color: #2a38bd;
+}
+.hoshi p{
+    flex:1;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.license{
+    font-size: 2.5rem;
+    /* background-color: aqua; */
+    margin-top: 0px;
+    margin-bottom: 2px;
+    border-bottom: 3.2px solid #0a1aff;
+}
+.shiken{
+    font-size: 1.5rem;
+    /* background-color: azure; */
+    line-height: 1.0;
+    margin: 0;
+    width: 100%;
+}
+.shiken p{
+    padding: 5px;
+    border-bottom: 1px solid #0a1aff ;
+}
+/* コーディング */
+.works{
+    padding: 15px;
+    /* background-color: #8a90e9; */
+}
+.section-title{
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding-top: 15px;
+    padding-bottom: 2px;
+} 
+.works-inner{
+    max-width: 760px;
+    margin: 0 auto;
+}
+.work-item{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 35px;
+    padding: 35px 0;
+    border-bottom: 1px solid #0a0000;
+}
+.work-item:last-child {
+    border-bottom: none;
+}
+.work-item img{
+    width: 100%;
+    height: 48vh;
+    object-fit: cover;
+    display: block;
+} 
+ /* 最近はSEOやアクセシビリティの観点から、表示する画像なら <img> + object-fit: cover を使うことが多いです。背景としての装飾画像だけ background-size: cover を使うのが一般的です。*/
+.work-kategori{
+    margin: 0 0 3px;
+    font-size: 1.5rem;
+}
+.work-text h3{
+    margin: 0 0 15px;
+    font-size: 1.7rem;
+}
+.work-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+/* flex-wrap: wrapは子要素を1行に並べきれないときに折り返してくれる。デフォではnowrapで無理やりにでも横に並べようとする */
+.work-tags span{
+    padding: 4px 7px;
+    background-color: #1422ef;
+    color: azure;
+    font-size: 1.4rem;
+}
+.work-description{
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+.work-button{
+    display: inline-block;
+    padding: 8px 16px;
+    color: #ffffff;
+    background-color: rgb(5, 138, 204);
+    /* border-left: 4px solid #6a0185; */
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    border-bottom: 5px solid #056db7;
+}
+.work-button:hover{
+    /* background-color: #8406e487; */
+    border-bottom-width: 0;
+    transform: translateY(5px);
+}
+.hum{
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+
+.skill,
+.hoshi{
+    flex-direction: column;
+    gap: 1px;
+}
+.kiji1{
+    grid-template-columns:1fr;
+}
+.kiji p{
+    padding-top: 0px;
+    margin-top: 0;
+}
+.skill p{
+    padding-top: 30px;
+    margin-top: 10px;
+}
+.license{
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+.work-item{
+    grid-template-columns:1fr;
+}
+.work-item img{
+    height:auto;
+}
+/* height: auto; は 高さを自動調整する という意味です。
+画像の場合、元の画像の縦横比を維持したまま高さを決める動きになります。 */
+header nav{
+    position: fixed;
+    top: -1000px;
+}
+/* ↑いったんめっちゃ上にして見えなくする */
+.hum{
+    display: block;
+	position: fixed;
+	/* ブラウザに固定  */
+	right: 15px;
+	top: 8px;
+    padding: 6px;
+    padding-left: 11px;
+    font-size: 3rem;
+    cursor:pointer;
+    z-index:9999;
+}
+/* ↑display blockをしないと戻ってきてくれないので忘れないように  corsor;pointerとｚ9999をしている理由はハンバーガを前面へ出さないと反応して
+くれなくなるのでこうしてる*/
+.open{
+    display: block; /*最初は三ボタン見える*/
+}
+.close{
+    display: none; /*最初は×ボタン見えないよ*/
+}
+.show{
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 25, 88, 0.419);
+    font-size: 2.5rem;
+    transition-duration: 0.5s;
+}
+.show2 .open{
+    display: none;
+}
+.show2 .close{
+    display: block !important;
+}
+/* ↑消える */
+nav.show ul{
+    display:block;
+    height:auto;
+    background: none;
+}
+nav.show li{
+    text-align:center;
+    border:none;
+    margin:30px 0;
+}
+nav.show a{
+    color:#fff;
+    font-size:2.6rem;
+}
+/* ↑showというクラスを作ってなくても、Java Script側で実行されたら自動的にshowというクラスが付くので大丈夫 */
+.nande{
+    margin:auto;
+}
+}

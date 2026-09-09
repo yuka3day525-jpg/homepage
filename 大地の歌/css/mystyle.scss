@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+$daimei:3.0rem;
+$big:2rem;
+$normal:1.6rem;
+$font:"Kiwi Maru", serif;
+$letter:0.05em;
+$green:rgb(5, 199, 24);
+
+$breakpoints: (
+'sp': 400px,
+'tb': 800px,
+);
+
+@mixin mq($point) {
+$value: map-get($breakpoints, $point); 
+@media screen and (max-width: $value) {
+@content;
+}
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    font-family: $font;
+}
+.hum{
+   display: none;
+   @include mq('sp'){
+    display: block;
+	position: fixed;
+	/* ブラウザに固定  */
+	right: 7px;
+	top: 3px;
+    padding: 6px;
+    font-size: 3rem;
+    cursor:pointer;
+      .open{
+        display: block;
+      }
+      .close{
+        display: none;
+      }
+   }
+}
+.index-nav.show{
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom:80px;
+    width: 100%;
+    // height: 81vh;
+    background-color: rgba(244, 246, 250, 0.738);
+    transition-duration: 0.5s;
+    transform: translateX(0);
+}
+.show2 .open{
+    display: none;
+}
+.show2 .close{
+    display: block !important;
+}
+.index-nav.show ul{
+    display:block;
+}
+.index-nav.show li{
+    text-align:center;
+    border:none;
+    margin:30px 0;
+    font-size:$big;
+}
+// nav.show a{
+//     color:#fff;
+//     font-size:8rem;
+// }
+
+header{
+    background-color: #d7e9c9;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .top{
+        margin-left:15px;
+        line-height: 8.0px;
+        a{
+            color:inherit;
+            text-decoration: none;
+            &:hover{
+                color: $green;
+                // ↑scssなら＆が必要
+            }
+            h2{
+                font-size: $big;
+            }
+            p{
+               font-size: $normal;
+               letter-spacing: $letter;
+            }
+        }
+    }
+    .navari{
+        ul{
+            list-style-type: none;
+            display: flex;
+            gap: 12px;
+            margin-right: 15px;
+            @include mq('sp'){
+                display: block;
+            }
+            a{ 
+                font-size: $normal;
+                padding-left: 5px;
+                letter-spacing: $letter;
+                color: inherit;
+                text-decoration: none;
+                .fa-soap{
+                    padding-right: 5px;
+                }
+                .fa-basket-shopping{
+                    padding-right: 5px;
+                }
+                &:hover{
+                    color: $green;
+                    // ↑scssなら＆が必要               
+                }
+            }
+        }
+    }
+    .index-nav{
+        @include mq('sp'){
+       position: fixed;
+       top:80px;
+       left:0;
+       width:100%;
+       height:calc(100vh - 160px);
+       transform:translateX(100%);
+       transition:.5s;
+       }
+        ul{
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            margin-right: 15px;
+             @include mq('sp'){
+             display:block;
+             padding:0;
+            }
+            
+            a{ 
+                font-size: $normal;
+                padding-left: 5px;
+                letter-spacing: $letter;
+                color: inherit;
+                text-decoration: none;
+                .fa-soap{
+                    padding-right: 5px;
+                }
+                .fa-basket-shopping{
+                    padding-right: 5px;
+                }
+                &:hover{
+                    color: $green;
+                    // ↑scssなら＆が必要               
+                }
+            }
+        }
+    }
+}
+.index{
+    height: 100vh;/*←これだけだとスクロール必要*/
+    height: calc(100vh - 160px); 
+    /* background-image: url(image/neko.jpg); */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: $daimei;
+        background-color: rgba(245, 247, 247, 0.63);
+        padding: 50px;
+        letter-spacing: $letter;
+        @include mq('sp'){
+            width:60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+.concept{
+    height: 100vh;
+    height: calc(100vh - 160px);
+    @include mq('sp'){
+        height: auto;
+    }
+    .midasi{
+        height:22vh;
+        background-image: url(../image/大地の詩背景.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{ 
+            width: 100%;
+            margin: 0;
+            font-size:4.1rem;
+            text-align: center;
+            background-color: #fbfeff7f;
+            letter-spacing: $letter;
+        }
+    }
+    .sukoyaka{
+        font-size:$big;
+        // background-color: aqua;
+        border-bottom: 2px solid #d7b2d0;
+        text-align: center;
+        padding-bottom: 10px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 0.06em;
+        @include mq('sp'){
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+    .kiji{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+        // background-color: aqua;
+        padding: 0;
+        @include mq('sp'){
+            display: block;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        img{
+            width: 90%;
+            height: 37vh;
+            object-fit: cover;
+            display: block;
+            padding-top: 27px;
+           @include mq('sp'){
+            width: 100%;
+           }
+        }
+        p{
+            font-size: $big;
+            line-height: 2.5;
+            letter-spacing: 0.06em;
+
+        }
+    }
+}
+
+.onlineshop{
+    .midasi{
+        height:22vh;
+        background-image: url(../image/大地の詩背景.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{ 
+            width: 100%;
+            margin: 0;
+            font-size:4.1rem;
+            text-align: center;
+            background-color: #fbfeff7f;
+            letter-spacing: $letter;
+        }
+    }
+    .sukoyaka{
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 0.06em;
+        width: 60%;
+        font-size:$big;
+        @include mq('sp'){
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .sukoyaka-midasi{     
+        // background-color: aqua;
+        border-bottom: 2px solid #d7b2d0;
+        text-align: center;
+        padding-bottom: 10px; 
+        @include mq('sp'){
+         font-size: 1.9rem;
+        } 
+        }
+        .sykoyaka-bun{
+            line-height: 2.0;
+        @include mq('sp'){
+            font-size: 1.8rem;
+        }
+        }
+    }
+    .shop-main {
+        min-width: 0;
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        gap: 35px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: initial;
+        // ↑フォントファミリを初期値へ
+        @include mq('sp'){
+            display: block;
+        }
+        .shop-section{
+            padding: 25px;
+            img{
+                width: 100%;
+                height: 320px;  
+                object-fit: cover; 
+                border-radius: 5px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.336);
+             
+            }
+            .shop-text{
+                .conduct{
+                    font-size: 1.5rem;
+                    border-left: 10px solid #dfe6da;
+                    padding-left: 4px;
+                }
+                .nedan{
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .shop-form{
+                display: flex;
+                justify-content: center;
+                font-size: 1.6rem;
+                gap:19px;
+                select{
+                    padding: 3px;
+                    margin-left: 2px;
+                }
+                button{
+                    padding: 3px;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+        
+    }
+}
+
+footer{
+    background-color: #fbfeff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 80px;
+    small{
+        font-size: $normal;
+        margin-right: 15px;
+        margin-top: 0;
+        @include mq('sp'){
+        width:75%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    }
+}

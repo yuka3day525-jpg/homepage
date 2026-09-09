@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプルロジテスク</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- ↑javaを手打ちしなくても、2,000以上のjQuery プラグインが公開されているサービス -->
+     <script src="js/jquery.bgswitcher.js"></script>
+    <!-- ↑フリーで配布されてるスライドショーのリンクを直下の専用のファイルに保存するのを忘れない←忘れてたね!https://rewish.jp/blog/releases/jquery_bg_switcherだよURL,そこをまず開け、
+     スライドショー用のプリントのリンク -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"> 
+     <!-- ↑グーグルフォント  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ↑フォントオーサム -->
+    <link rel="stylesheet" href="port.css">
+    <meta name="description" content="サンプル">
+</head>
+<body class="nannde">
+  <p class="hum">
+    <i class="fa-solid fa-bars open" style="color: rgb(230, 3, 3);"></i>
+    <i class="fa-solid fa-xmark close" style="color: rgb(252, 251, 251);"></i>
+  </p>
+<header>
+    <h1><a href="index.html"><img src="image/rogo.png" alt=""></a></h1>
+    <nav>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#place">Place</a></li>
+    <li><a href="gallery.html">Gyarally</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#feed">Feedback</a></li>
+    </ul>
+    </nav>
+</header>
+<main class="gallery-layout">
+  <!-- 左側のサイドメニュー -->
+  <aside class="side-menu">
+    <h2>GALLERY</h2>
+    <ul>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#home">おうち時間</a></li>
+      <li><a href="#outing">おでかけ</a></li>
+      <li><a href="#trimming">トリミング</a></li>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#walk">お散歩</a></li>
+      <li><a href="#walk">お散歩</a></li>
+    </ul>
+  </aside>
+
+  <!-- 右側の本文 -->
+  <div class="gallery-main">
+    <section id="walk" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>お散歩</h2>
+        <p>
+          ベルとまろのお散歩中の写真です。
+          それぞれ好きな場所を歩きながら、のんびり過ごしています。
+        </p>
+      </div>
+
+      <img src="image/g1.jpeg" alt="ベルとまろのお散歩写真">
+    </section>
+
+    <section id="home" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>おうち時間</h2>
+        <p>
+          おうちでゆっくり過ごしているふたり。
+          ふかふかの場所や家族の近くがお気に入りです。
+        </p>
+      </div>
+
+      <img src="image/g2.jpeg" alt="ベルとまろのおうちでの写真">
+    </section>
+    <section id="outing" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>おでかけ</h2>
+        <p>
+          家族と一緒におでかけしたときの写真です。
+          いつもとは違う場所で、楽しそうな表情を見せてくれます。
+        </p>
+      </div>
+
+      <img src="image/g3.jpeg" alt="ベルとまろのおでかけ写真">
+    </section>
+
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g4.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g5.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g6.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g7.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g8.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g9.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+    <section id="trimming" class="gallery-section">
+      <div class="gallery-text">
+        <h2><i class="fa-solid fa-camera" style="color: rgb(207, 30, 0);"></i>トリミング</h2>
+        <p>
+          トリミング後のふたりです。
+          きれいに整えてもらって、かわいらしい姿になりました。
+        </p>
+      </div>
+
+      <img src="image/g10.jpeg" alt="トリミング後のベルとまろ">
+    </section>
+  </div>
+</main>
+<footer>
+<div class="foot">
+<h1>Black Poodle</h1>
+    <nav>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#place">Place</a></li>
+    <li><a href="gallery.html">Gyarally</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#feed">Feedback</a></li>
+    </ul>
+    </nav>
+<p class="jouhou"><span>個人情報保護方針</span><span>特定個人情報基本方針</span><span>Cookieポリシー</span></p>
+</div>
+<p class="with">Black Poodele officil</p>
+</footer>
+<script>
+$(".hum").click(function () {
+$("nav").toggleClass("show");
+});
+</script>
+<script>
+$(".hum").click(function () {
+$(".hum").toggleClass("show2");
+});
+</script>
+</body>
+</html>
