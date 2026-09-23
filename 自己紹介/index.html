@@ -71,53 +71,62 @@
 <div class="shiken">
 <p>2024.3 愛玩動物看護師</p>
 <p>2026.5 基本情報技術者試験</p>
-<p>2026.</p>
+<p>2026.8 Python 3 エンジニア認定基礎試験</p>
 </div>
 </section>
 <section class="works" id="point3">
   <h2 class="section-title">Works</h2>
  <div class="work-inner">
   <article class="work-item">
-   <img src="image/rei.png" alt="">
+   <img src="image/スクリーンショット⓵.jpeg" alt="">
    <div class="work-text">
-    <p class="work-kategori">職業訓練コーナー</p>
-    <h3>ああああああ</h3>
+    <p class="work-kategori">自主制作⓵</p>
+    <h3>MoneyMind｜二人で使う家計管理Webアプリ</h3>
     
     <div class="work-tags">
-        <span>HTML/CSS</span>
-        <span>PHP</span>
+        <span>Django</span>
         <span>Python</span>
+        <span>JavaScript</span>
     </div>
 
     <p class="work-description">
-        黙々と作業することが好きな24歳です、もともと動物看護師をしておりました。
-        前職を退職後に職業訓練に通い、HTML、CSS、PHP、Pythonの基礎を習得しました。<br>
-        実務経験はありませんが、論理的な思考力と問題解決力を活かし、丁寧かつ効率的に<br>
-        作業を進めることを意識しています。
+        同居する二人の家計を、できるだけ手入力を減らして管理するためにDjangoで自主制作しました。<br>
+        楽天カードや銀行の利用明細をCSVで取り込み、整形してデータベースに保存します。取引先名に応じた支出の自動分類に加え、<br>
+        分類結果の修正やルールの保存にも対応しています。<br>
+        個人と世帯全体の明細・収支を切り替えて確認でき、月別集計やグラフで支出の内訳と推移を把握できます。NISAの評価額も記録し、<br>
+        資産状況とあわせて確認できます。デモ用データベースを分けており、ポートフォリオから機能を試せる構成にしています。<br>
+        デプロイしたとき用のパスワード<br>
+        'demo_user1'　 user_port11<br>
+        'demo_user2'　 user_port22<br>
     </p>
-    <a href="#" class="work-button">サイトを見る</a>
+    <p>CSV取り込みを試す場合は、デモ用ファイルをダウンロードしてください。</p>
+    <a href="image/demo_user2_card明細2026年3月.csv" download>
+    デモ用CSVをダウンロード
+    </a>
+    <p><a href="https://moneymind-demo.onrender.com/login/" class="work-button">サイトを見る</a></p>
    </div>
 
   </article>
   <article class="work-item">
-   <img src="image/rei.png" alt="">
+   <img src="image/スクリーンショット⓶.jpeg" alt="">
    <div class="work-text">
-    <p class="work-kategori">職業訓練コーナー</p>
-    <h3>ああああああ</h3>
+    <p class="work-kategori">自主制作⓶</p>
+    <h3>ハリーポッターシリーズの呪文で学ぶ英語</h3>
     
     <div class="work-tags">
-        <span>HTML/CSS</span>
-        <span>PHP</span>
+        <span>Flask</span>
         <span>Python</span>
     </div>
 
     <p class="work-description">
-        黙々と作業することが好きな24歳です、もともと動物看護師をしておりました。
-        前職を退職後に職業訓練に通い、HTML、CSS、PHP、Pythonの基礎を習得しました。<br>
-        実務経験はありませんが、論理的な思考力と問題解決力を活かし、丁寧かつ効率的に<br>
-        作業を進めることを意識しています。
+    ハリー・ポッターの呪文を題材に、楽しみながら英語を学習できるWebアプリをFlaskで自主制作しました。<br>
+    外部APIから呪文名と英語の説明文を取得し、日本語訳とあわせて表示します。<br>
+    説明文から英単語を抽出し、NLTKを用いて単語を原形化したうえで、辞書APIから日本語の意味を取得できるようにしました。<br>
+    学習した呪文はユーザー名とともにデータベースへ保存でき、履歴の閲覧やExcel形式でのダウンロードにも対応しています。<br>
+    Flaskによる画面遷移やフォーム処理に加え、外部APIとの連携、テキスト処理、SQLiteを用いたデータ管理を実装しました。<br>
+    デプロイしたら日本語訳が出なくなってしまったので直す
     </p>
-    <a href="#" class="work-button">サイトを見る</a>
+    <a href="https://harry-potter-app-kkv4.onrender.com/" class="work-button">サイトを見る</a>
    </div>
 
   </article>
