@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大地の詩｜PHP・MySQLで制作したECサイトの機能と開発の工夫を紹介するポートフォリオ詳細ページです。">
+  <title>大地の詩 | Works Detail</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">PORTFOLIO</a>
+      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">TRAINING PROJECT / 03</p>
+      <h1 id="page-title">大地の詩</h1>
+      <p class="hero-sub">PHP・MySQLを用いたECサイト</p>
+      <p class="hero-desc">商品を探す・カートに入れる・購入手続きを進める流れに加え、顧客や商品を扱う管理者画面も制作した、スキンケア用品のECサイトです。</p>
+      <ul class="tag-list" aria-label="使用技術">
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>HTML / CSS</li>
+        <li>SCSS</li>
+      </ul>
+      <div class="actions">
+        <!-- 公開URLを確認したら下のコメントを外し、hrefを実際のURLに置き換える -->
+        <!-- <a class="btn btn-light" href="公開URL" target="_blank" rel="noopener noreferrer">デモサイトを見る ↗</a> -->
+        <a class="btn btn-outline" href="#feature-details">機能の詳細を見る ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-nav" aria-label="ページ内メニュー">
+    <div class="container">
+      <a href="#overview">概要</a>
+      <a href="#feature-details">機能の詳細</a>
+      <a href="#demo">デモ体験</a>
+      <a href="#video">操作動画</a>
+      <a href="#development">開発の工夫</a>
+      <a href="#ai">生成AI活用</a>
+      <a href="#future">今後の改善</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="detail" id="overview">
+      <div class="section-head">
+        <p class="section-no">01 / OVERVIEW</p>
+        <h2>制作背景・作品概要</h2>
+      </div>
+      <div class="summary">
+        <p>PHPとMySQLを活用し、商品を選ぶ利用者側と、商品・顧客を管理する運営側の両方を備えたECサイトを制作しました。</p>
+        <p>商品一覧・詳細表示、検索やカテゴリによる絞り込み、カート、会員ログインに加え、管理者専用ページでのデータ管理にも取り組みました。画面の演出にはjQueryを利用しています。</p>
+        <dl class="meta">
+          <div><dt>制作区分</dt><dd>自主制作</dd></div>
+          <div><dt>開発言語・データベース</dt><dd>PHP / MySQL / JavaScript</dd></div>
+          <div><dt>画面・ライブラリ</dt><dd>HTML / CSS / SCSS / jQuery</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail" id="feature-details">
+      <div class="section-head">
+        <p class="section-no">02 / FEATURE DETAILS</p>
+        <h2>機能の詳細</h2>
+        <p class="section-lead">利用者向け画面と管理者向け画面に分けて、主な機能を紹介します。</p>
+      </div>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-products.jpg" alt="大地の詩の商品一覧画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>画像①：商品一覧画面<br>image/daichi-products.jpg</div>
+          <figcaption>商品一覧・カテゴリ検索</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 01</p>
+          <h3>商品一覧・検索・並び替え</h3>
+          <p>MySQLに登録した商品情報をPHPで取得し、商品一覧に表示します。カテゴリや商品名による検索に加え、価格の安い順・高い順、新着順での並び替えに対応しました。</p>
+          <ul>
+            <li>商品名によるキーワード検索</li>
+            <li>カテゴリでの絞り込み</li>
+            <li>価格順・新着順の並び替え</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-detail.jpg" alt="商品の詳細と在庫表示画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>画像②：商品詳細画面<br>image/daichi-detail.jpg</div>
+          <figcaption>商品詳細・在庫表示</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 02</p>
+          <h3>商品詳細・在庫に応じた数量選択</h3>
+          <p>商品詳細ページでは、商品画像や価格、在庫数を表示。購入数量は在庫数と上限数を考慮して選択でき、在庫がない場合はカート追加ボタンを表示しないようにしています。</p>
+          <ul>
+            <li>商品画像・説明・価格・在庫数の表示</li>
+            <li>在庫数に応じた数量選択</li>
+            <li>カートへの追加</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-cart.jpg" alt="ショッピングカート画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>画像③：カート画面<br>image/daichi-cart.jpg</div>
+          <figcaption>ショッピングカート</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 03</p>
+          <h3>カート・購入フロー</h3>
+          <p>商品をカートに追加し、注文までの流れを操作できる構成にしました。PHPのセッションを利用し、画面を移動してもカートの内容を保持します。</p>
+          <ul>
+            <li>商品をカートに追加</li>
+            <li>カート内商品の確認</li>
+            <li>購入手続きへの画面遷移</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-login.jpg" alt="会員ログイン画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>画像④：ログイン画面<br>image/daichi-login.jpg</div>
+          <figcaption>会員ログイン・画面のアクセス制御</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 04</p>
+          <h3>ログイン・利用者と管理者の区別</h3>
+          <p>会員のログイン状態を管理し、ログイン状況に応じて表示するメニューを切り替えています。管理者用ページはセッションを確認し、管理者以外のアクセスを制限しています。</p>
+          <ul>
+            <li>会員ログイン</li>
+            <li>セッションによるログイン状態の管理</li>
+            <li>管理者専用ページのアクセス制限</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-admin.jpg" alt="商品や顧客情報を扱う管理者画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>画像⑤：管理者画面<br>image/daichi-admin.jpg</div>
+          <figcaption>管理者の商品・顧客管理</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 05</p>
+          <h3>管理者向けデータ管理</h3>
+          <p>管理者専用画面から、商品情報や顧客情報を確認できるようにしました。顧客一覧から詳細へ遷移でき、商品検索・カテゴリ絞り込みなど、必要な情報を探しやすくする機能も実装しています。</p>
+          <ul>
+            <li>管理者認証による閲覧制限</li>
+            <li>商品情報の表示・検索</li>
+            <li>顧客一覧・顧客詳細の確認</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="detail" id="demo">
+      <div class="section-head">
+        <p class="section-no">03 / LIVE DEMO</p>
+        <h2>デモサイトを試す</h2>
+        <p class="section-lead">公開先URLとデモアカウントが準備できたら、こちらから案内します。</p>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-panel">
+          <h3>利用者向け画面</h3>
+          <p>商品一覧から検索、商品詳細、カートへの追加までの操作を紹介します。</p>
+          <!-- 公開時に利用者向けURL・必要なら公開専用アカウントを追加 -->
+          <p class="hint">※ 公開URLを設定してください。</p>
+        </div>
+        <div class="demo-panel">
+          <h3>管理者向け画面</h3>
+          <p>商品や顧客の管理機能は、個人情報を含まないサンプルデータで紹介する想定です。</p>
+          <div class="warn">管理者アカウントの認証情報は、一般公開しないでください。</div>
+        </div>
+      </div>
+      <div class="note-panel" style="margin-top:17px">
+        <h3>操作の流れ</h3>
+        <div class="flow" aria-label="ECサイトの操作手順">
+          <div class="flow-step">1. 商品検索</div>
+          <div class="flow-step">2. 商品詳細を見る</div>
+          <div class="flow-step">3. カートへ追加</div>
+          <div class="flow-step">4. 購入画面へ</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail" id="video">
+      <div class="section-head">
+        <p class="section-no">04 / VIDEO</p>
+        <h2>操作デモ動画</h2>
+        <p class="section-lead">利用者向けの操作と管理者向けの画面を動画で紹介できます。</p>
+      </div>
+      <div class="video-panel">
+        <div class="video-wrap">
+          <video controls preload="metadata" playsinline poster="image/daichi-products.jpg" aria-label="大地の詩 操作デモ動画">
+            <source src="video/daichi-demo.mp4" type="video/mp4">
+            <p class="video-fallback">動画を再生できない場合は対応ブラウザでご確認ください。</p>
+          </video>
+        </div>
+        <p class="hint">動画を配置する場合は、商品検索 → カート → 管理画面の順で操作を収録すると伝わりやすくなります。</p>
+      </div>
+    </section>
+
+    <section class="detail" id="development">
+      <div class="section-head">
+        <p class="section-no">05 / DEVELOPMENT</p>
+        <h2>開発で工夫したこと</h2>
+      </div>
+      <div class="two-col">
+        <article class="info-card">
+          <h3>PDOを用いたデータ取得</h3>
+          <p>商品検索やカテゴリによる絞り込みでは、PDOのプリペアドステートメントとパラメータのバインドを利用しました。検索条件に応じて必要な商品を取得する処理を組み立てました。</p>
+        </article>
+        <article class="info-card">
+          <h3>在庫を考慮した表示</h3>
+          <p>商品詳細では在庫数に応じて選択できる数量を制御し、在庫がない商品はカート追加ボタンを表示しないようにしました。</p>
+        </article>
+        <article class="info-card">
+          <h3>jQueryによる画面演出</h3>
+          <p>jQueryと背景画像切り替え用プラグインを読み込み、スライドショーを取り入れました。SCSSでレイアウトを管理し、スマートフォン表示にも対応しています。</p>
+        </article>
+        <article class="info-card">
+          <h3>管理者専用ページ</h3>
+          <p>セッションに保存したログイン情報を使って権限を確認し、管理者以外は管理画面にアクセスできないようにしました。顧客情報の表示にも管理者向けの条件を設けています。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail" id="ai">
+      <div class="section-head">
+        <p class="section-no">06 / GENERATIVE AI</p>
+        <h2>生成AIの活用</h2>
+        <p class="section-lead">制作過程での生成AIの利用について紹介します。</p>
+      </div>
+      <div class="two-col">
+        <article class="info-card">
+          <span class="ai-label">開発過程のAI活用</span>
+          <h3>実装方法の検討・エラー調査の補助</h3>
+          <p>生成AIを、実装方法の調査やエラー原因を整理するための補助として活用しました。提案内容は処理を確認し、実際に動作を試しながら修正しました。</p>
+        </article>
+        <article class="info-card">
+          <span class="ai-label">確認と検証</span>
+          <h3>コードと実行結果を照らし合わせる</h3>
+          <p>提案された処理がそのまま正しく動くとは限らないため、検索・カート・権限制御など、画面とデータベースの動きを確かめながら開発を進めました。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail" id="future">
+      <div class="section-head">
+        <p class="section-no">07 / NEXT STEPS</p>
+        <h2>今後の改善点</h2>
+      </div>
+      <div class="callout">
+        <p>注文管理や在庫管理の動作をさらに検証し、利用者が迷わず操作できる画面表示と、入力エラー時の案内を改善していきたいと考えています。</p>
+        <p style="margin-bottom:0">また、公開環境で利用者向け画面を試せるよう、個人情報を含まないデモデータの整備と動作確認を進めたいと考えています。</p>
+      </div>
+      <div class="actions">
+        <a class="btn" style="background:#fff;border-color:#c9d5ec;color:#243765" href="index.html#point3">← Works一覧へ戻る</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© Portfolio — <a href="index.html#point3">Works一覧に戻る</a></div></footer>
+</body>
+</html>

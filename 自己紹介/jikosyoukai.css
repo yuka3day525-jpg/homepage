@@ -157,80 +157,226 @@ footer{
     padding: 5px;
     border-bottom: 1px solid #0a1aff ;
 }
-/* コーディング */
-.works{
-    padding: 15px;
-    /* background-color: #8a90e9; */
+/* ==========================
+   Works
+========================== */
+
+.works {
+    padding: 50px 5% 90px;
 }
-.section-title{
-    max-width: 900px;
+
+.works .section-title {
+    max-width: 1100px;
     margin: 0 auto 50px;
-    padding-top: 15px;
-    padding-bottom: 2px;
-} 
-.works-inner{
-    max-width: 760px;
+    padding: 0 0 15px;
+}
+
+/* 作品一覧全体 */
+.work-inner {
+    max-width: 1100px;
     margin: 0 auto;
 }
-.work-item{
+
+/* 作品1件 */
+.work-item {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 35px;
-    padding: 35px 0;
-    border-bottom: 1px solid #0a0000;
+    grid-template-columns: 40% 1fr;
+    gap: 45px;
+    align-items: start;
+
+    padding: 45px 0;
+    border-bottom: 1px solid #d8def0;
 }
+
 .work-item:last-child {
     border-bottom: none;
 }
-.work-item img{
-    width: 100%;
-    height: 48vh;
-    object-fit: cover;
+
+/* 作品画像 */
+.work-image img {
     display: block;
-} 
- /* 最近はSEOやアクセシビリティの観点から、表示する画像なら <img> + object-fit: cover を使うことが多いです。背景としての装飾画像だけ background-size: cover を使うのが一般的です。*/
-.work-kategori{
-    margin: 0 0 3px;
-    font-size: 1.5rem;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e0e5f0;
+    border-radius: 10px;
 }
-.work-text h3{
-    margin: 0 0 15px;
-    font-size: 1.7rem;
+
+/* 作品情報 */
+.work-content {
+    min-width: 0;
 }
-.work-tags{
+
+/* 制作区分 */
+.work-category {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: #626f91;
+}
+
+/* 作品タイトル */
+.work-title {
+    margin: 0 0 20px;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #202a49;
+}
+
+.work-title span {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #52617c;
+}
+
+/* 使用技術 */
+.work-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 15px;
+    gap: 8px;
+
+    padding: 0;
+    margin: 0 0 25px;
+    list-style: none;
 }
-/* flex-wrap: wrapは子要素を1行に並べきれないときに折り返してくれる。デフォではnowrapで無理やりにでも横に並べようとする */
-.work-tags span{
-    padding: 4px 7px;
-    background-color: #1422ef;
-    color: azure;
+
+.work-tech li {
+    padding: 6px 12px;
+    background-color: #e8edff;
+    color: #273ba9;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+/* 作品説明 */
+.work-description {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #333b50;
+}
+
+/* デモ情報 */
+.work-demo {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #dce3f2;
+    border-radius: 8px;
+}
+
+.work-demo-title {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #273ba9;
+    letter-spacing: 0.05em;
+}
+
+.work-demo > p:not(.work-demo-title) {
+    margin: 0 0 15px;
+    font-size: 1.3rem;
+    color: #52617c;
+}
+
+/* ログイン情報 */
+.work-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 15px;
+}
+
+.work-credentials div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.work-credentials dt {
+    font-size: 1.2rem;
+    color: #69758d;
+}
+
+.work-credentials dd {
+    margin: 0;
     font-size: 1.4rem;
+    color: #202a49;
 }
-.work-description{
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-}
-.work-button{
-    display: inline-block;
-    padding: 8px 16px;
-    color: #ffffff;
-    background-color: rgb(5, 138, 204);
-    /* border-left: 4px solid #6a0185; */
+
+/* CSVダウンロード */
+.work-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 1.3rem;
+    color: #273ba9;
     text-decoration: none;
+}
+
+.work-download:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   作品リンク
+========================== */
+
+.work-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* メインボタン */
+.work-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    padding: 13px 24px;
+
+    background-color: #273ba9;
+    color: white;
+
     font-size: 1.5rem;
-    border-radius: 10px;
-    transition: 0.3s;
-    border-bottom: 5px solid #056db7;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 6px;
+    transition: 0.2s;
 }
-.work-button:hover{
-    /* background-color: #8406e487; */
-    border-bottom-width: 0;
-    transform: translateY(5px);
+
+.work-primary:hover {
+    background-color: #182b85;
+    transform: translateY(-2px);
 }
+
+/* 詳細・GitHubリンク */
+.work-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 0;
+
+    color: #273ba9;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    border-bottom: 1px solid #a7b4e0;
+    transition: 0.2s;
+}
+
+.work-secondary:hover {
+    color: #101c64;
+    border-color: #101c64;
+}
+
 .hum{
     display: none;
 }
