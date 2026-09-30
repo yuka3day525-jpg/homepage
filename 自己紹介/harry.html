@@ -1,108 +1,441 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
-
-  <meta charset="utf-8"/>
-
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-  <meta content="ハリー・ポッターの呪文を題材とした英語学習アプリの機能、API連携、単語処理、操作動画、開発での工夫を紹介します。" name="description"/>
-
-  <title>Harry Potter | Works Detail</title>
-
-  <link href="works.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Harry Potter｜呪文を題材にした英語学習Webアプリの制作背景、主な機能、開発時の工夫、操作動画を紹介するポートフォリオ詳細ページです。">
+  <title>Harry Potter | Works Detail</title>
+  <link rel="stylesheet" href="works.css">
 </head>
+
 <body>
 
-  <header class="topbar">
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">PORTFOLIO</a>
+      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+    </div>
+  </header>
 
-    <div class="container">
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">PERSONAL PROJECT / 02</p>
+      <h1 id="page-title">Harry Potter</h1>
+      <p class="hero-sub">呪文を題材にした英語学習Webアプリ</p>
 
-      <a class="brand" href="index.html">PORTFOLIO</a>
+      <p class="hero-desc">
+        Harry Potter APIから取得した呪文の英語説明文をGemini APIで日本語に翻訳し、
+        英文から抽出した単語の意味を調べながら学習できるWebアプリです。
+        学習した呪文は履歴として保存し、Excel形式でダウンロードできます。
+      </p>
 
-      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+      <ul class="tag-list" aria-label="使用技術">
+        <li>Python</li>
+        <li>Flask</li>
+        <li>JavaScript</li>
+        <li>SQLite</li>
+        <li>NLTK</li>
+        <li>Requests</li>
+        <li>Gemini API</li>
+        <li>openpyxl</li>
+        <li>Harry Potter API</li>
+        <li>辞書API</li>
+      </ul>
 
-    </div>
+      <div class="actions">
+        <a class="btn btn-light"
+           href="https://harry-potter-app-kkv4.onrender.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          デモサイトを見る ↗
+        </a>
 
-  </header>
+        <a class="btn btn-outline"
+           href="https://github.com/yuka3day525-jpg/harry_potter_app.git"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <nav class="page-nav" aria-label="ページ内メニュー">
+    <div class="container">
+      <a href="#overview">概要</a>
+      <a href="#feature-details">機能の詳細</a>
+      <a href="#demo">デモ体験</a>
+      <a href="#video">操作動画</a>
+      <a href="#development">開発の工夫</a>
+      <a href="#ai">生成AI活用</a>
+      <a href="#future">今後の改善</a>
+    </div>
+  </nav>
 
+  <main class="container">
 
-  <section aria-labelledby="page-title" class="hero">
+    <section class="detail" id="overview">
+      <div class="section-head">
+        <p class="section-no">01 / OVERVIEW</p>
+        <h2>制作背景・作品概要</h2>
+      </div>
 
-    <div class="container">
+      <div class="summary">
+        <p>
+          ハリー・ポッターの呪文を題材に、興味のある作品を通じて
+          英語を楽しく学べるWebアプリをFlaskで制作しました。
+        </p>
 
-      <p class="eyebrow">PERSONAL PROJECT / 02</p>
+        <p>
+          Harry Potter APIから呪文の英語説明文を取得し、
+          Gemini APIで日本語に翻訳して表示します。
+          さらに英文から英単語を抽出し、辞書APIを利用して意味を確認できます。
+          学習した内容はSQLiteに保存でき、履歴の閲覧やExcelへの出力にも対応しています。
+        </p>
 
-      <h1 id="page-title">Harry Potter</h1>
+        <dl class="meta">
+          <div>
+            <dt>制作区分</dt>
+            <dd>自主制作</dd>
+          </div>
 
-      <p class="hero-sub">呪文を題材にした英語学習Webアプリ</p>
+          <div>
+            <dt>開発言語・フレームワーク</dt>
+            <dd>Python / Flask / JavaScript</dd>
+          </div>
 
-      <p class="hero-desc">呪文の英語説明文を日本語訳とともに表示し、単語の意味を調べられる英語学習アプリ。学習した呪文は履歴として保存し、Excel形式でダウンロードできます。</p>
+          <div>
+            <dt>データ処理・外部API</dt>
+            <dd>Requests / NLTK / Gemini API / openpyxl / Harry Potter API / 辞書API</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
 
-      <ul aria-label="使用技術" class="tag-list"><li>Python</li><li>Flask</li><li>JavaScript</li><li>SQLite</li><li>NLTK</li><li>Requests</li><li>deep-translator</li><li>openpyxl</li><li>外部API</li></ul>
+    <section class="detail" id="feature-details">
+      <div class="section-head">
+        <p class="section-no">02 / FEATURE DETAILS</p>
+        <h2>機能の詳細</h2>
+        <p class="section-lead">
+          スクリーンショットとともに、呪文の取得から学習履歴の保存・出力までを紹介します。
+        </p>
+      </div>
 
-      <div class="actions"><a class="btn btn-light" href="https://harry-potter-app-kkv4.onrender.com/" rel="noopener noreferrer" target="_blank">デモサイトを見る ↗</a><a class="btn btn-outline" href="#" title="GitHub公開用URLに差し替え">GitHub（URL設定待ち）</a></div>
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/hp-spell.jpg"
+               alt="呪文名、英語説明文、日本語訳を表示した画面"
+               loading="lazy"
+               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>
+            画像：呪文情報と日本語訳<br>
+            image/hp-spell.jpg
+          </div>
+          <figcaption>呪文情報と日本語訳</figcaption>
+        </figure>
 
-    </div>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 01</p>
+          <h3>呪文情報の取得・日本語訳</h3>
 
-  </section>
+          <p>
+            Harry Potter APIから呪文の名前と英語説明文を取得し、
+            ランダムに選んだ呪文を表示します。
+            取得した英語説明文はGemini APIで日本語に翻訳し、
+            原文と日本語訳をあわせて確認できるようにしました。
+          </p>
 
+          <ul>
+            <li>外部APIから呪文情報を取得</li>
+            <li>ランダムに一つの呪文を選択</li>
+            <li>Gemini APIによる日本語翻訳</li>
+            <li>英語説明文と日本語訳を表示</li>
+          </ul>
+        </div>
+      </article>
 
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/hp-words.jpg"
+               alt="英文から抽出した英単語と日本語の意味の画面"
+               loading="lazy"
+               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>
+            画像：英単語の抽出と意味の検索<br>
+            image/hp-words.jpg
+          </div>
+          <figcaption>英単語の抽出と意味の検索</figcaption>
+        </figure>
 
-  <nav aria-label="ページ内メニュー" class="page-nav">
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 02</p>
+          <h3>英単語の抽出・意味の検索</h3>
 
-    <div class="container">
+          <p>
+            説明文から正規表現で英単語を取り出し、
+            重複・短い単語・一部の基本語を除外します。
+            NLTKで動詞・名詞・形容詞の原形候補を作り、
+            辞書APIから日本語の意味を検索します。
+          </p>
 
-      <a href="#overview">概要</a><a href="#feature-details">機能の詳細</a><a href="#demo">デモ体験</a><a href="#video">操作動画</a><a href="#development">開発の工夫</a><a href="#ai">生成AI活用</a><a href="#future">今後の改善</a>
+          <ul>
+            <li>正規表現による英単語の抽出</li>
+            <li>NLTKによる原形化</li>
+            <li>辞書APIを利用した日本語の意味の取得</li>
+          </ul>
+        </div>
+      </article>
 
-    </div>
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/hp-history.jpg"
+               alt="保存した呪文を一覧表示した画面"
+               loading="lazy"
+               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>
+            画像：SQLiteで学習履歴を保存<br>
+            image/hp-history.jpg
+          </div>
+          <figcaption>SQLiteで学習履歴を保存</figcaption>
+        </figure>
 
-  </nav>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 03</p>
+          <h3>学習履歴の保存・閲覧</h3>
 
+          <p>
+            ユーザー名とともに、呪文名・英文・日本語訳・単語の意味をSQLiteに保存します。
+            保存した呪文は履歴画面から確認できます。
+          </p>
 
+          <ul>
+            <li>ユーザー名と呪文情報を保存</li>
+            <li>登録日時を記録</li>
+            <li>保存した履歴を一覧表示</li>
+          </ul>
+        </div>
+      </article>
 
-  <main class="container">
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/hp-excel.jpg"
+               alt="ダウンロードした呪文履歴のExcelファイル"
+               loading="lazy"
+               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="image-placeholder" hidden>
+            画像：Excel形式でダウンロード<br>
+            image/hp-excel.jpg
+          </div>
+          <figcaption>Excel形式でダウンロード</figcaption>
+        </figure>
 
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 04</p>
+          <h3>学習履歴のExcel出力</h3>
 
+          <p>
+            履歴に保存した呪文名・英文・日本語訳・単語の意味をopenpyxlでExcelファイルにまとめ、
+            ダウンロードできるようにしました。
+          </p>
 
-    <section class="detail" id="overview"><div class="section-head"><p class="section-no">01 / OVERVIEW</p><h2>制作背景・作品概要</h2></div><div class="summary"><p>ハリー・ポッターの呪文を題材に、興味のある作品を通じて英語を楽しく学べるWebアプリをFlaskで制作しました。</p><p>外部APIから取得した呪文の英語説明を日本語訳とともに表示し、英文から抽出した単語を辞書APIで調べられます。学習した呪文とその内容はSQLiteに保存でき、履歴の閲覧やExcelへの出力にも対応しています。</p><dl class="meta"><div><dt>制作区分</dt><dd>自主制作</dd></div><div><dt>開発言語・フレームワーク</dt><dd>Python / Flask / JavaScript（画面側）</dd></div><div><dt>データ処理・外部API</dt><dd>Requests / NLTK / deep-translator / openpyxl / Harry Potter API / 辞書API</dd></div></dl></div></section>
+          <ul>
+            <li>SQLiteから履歴データを取得</li>
+            <li>openpyxlでExcelファイルを生成</li>
+            <li>学習履歴をExcel形式でダウンロード</li>
+          </ul>
+        </div>
+      </article>
+    </section>
 
+    <section class="detail" id="demo">
+      <div class="section-head">
+        <p class="section-no">03 / LIVE DEMO</p>
+        <h2>デモサイトを試す</h2>
+        <p class="section-lead">
+          公開中のWebアプリから、呪文の取得・英単語の検索・学習履歴の保存をお試しいただけます。
+        </p>
+      </div>
 
+      <div class="demo-grid">
+        <div class="demo-panel">
+          <h3>デモサイト</h3>
+          <p>下のボタンから公開中のFlaskアプリを開けます。</p>
 
-    
+          <a class="btn btn-blue"
+             href="https://harry-potter-app-kkv4.onrender.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            デモサイトを開く ↗
+          </a>
 
+          <p class="hint">
+            ※ 外部APIやGemini APIの応答状況によって、表示に時間がかかる場合があります。
+          </p>
+        </div>
 
+        <div class="demo-panel">
+          <h3>使い方</h3>
+          <p>
+            ユーザー名を入力して呪文を表示し、
+            英語説明文と日本語訳、単語の意味を確認できます。
+            学習した内容は履歴に保存し、Excel形式でダウンロードできます。
+          </p>
+        </div>
+      </div>
 
-    <section class="detail" id="feature-details"><div class="section-head"><p class="section-no">02 / FEATURE DETAILS</p><h2>機能の詳細</h2><p class="section-lead">スクリーンショットとともに、呪文の取得から学習履歴の保存・出力までを紹介します。</p></div><article class="detail-feature"><figure class="feature-picture"><img alt="呪文名、英語説明文、日本語訳を表示した画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" src="image/hp-spell.jpg"/><div class="image-placeholder" hidden="">画像：呪文情報と日本語訳<br/>image/hp-spell.jpg</div><figcaption>呪文情報と日本語訳</figcaption></figure><div class="feature-copy"><p class="small-number">FEATURE 01</p><h3>呪文情報の取得・日本語訳</h3><p>Harry Potter APIから呪文の名前と英語説明文を取得し、ランダムに選んだ呪文を表示します。deep-translatorを使った日本語訳もあわせて確認できます。</p><ul><li>外部APIから呪文を取得</li><li>ランダムに一つの呪文を選択</li><li>英語説明文と日本語訳を表示</li></ul></div></article><article class="detail-feature"><figure class="feature-picture"><img alt="英文から抽出した英単語と日本語の意味の画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" src="image/hp-words.jpg"/><div class="image-placeholder" hidden="">画像：英単語の抽出と意味の検索<br/>image/hp-words.jpg</div><figcaption>英単語の抽出と意味の検索</figcaption></figure><div class="feature-copy"><p class="small-number">FEATURE 02</p><h3>英単語の抽出・意味の検索</h3><p>説明文から正規表現で英単語を取り出し、重複・短い単語・一部の基本語を除外します。NLTKで動詞・名詞・形容詞の原形候補を作り、辞書APIから日本語の意味を検索します。</p><ul><li>正規表現による英単語の抽出</li><li>NLTKによる原形化</li><li>辞書APIを利用した日本語の意味の取得</li></ul></div></article><article class="detail-feature"><figure class="feature-picture"><img alt="保存した呪文を一覧表示した画面" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" src="image/hp-history.jpg"/><div class="image-placeholder" hidden="">画像：SQLiteで学習履歴を保存<br/>image/hp-history.jpg</div><figcaption>SQLiteで学習履歴を保存</figcaption></figure><div class="feature-copy"><p class="small-number">FEATURE 03</p><h3>学習履歴の保存・閲覧</h3><p>ユーザー名とともに呪文名、英文、日本語訳、単語の意味をSQLiteに保存します。保存した呪文は履歴画面で新しい順に閲覧できます。</p><ul><li>ユーザー名と呪文情報を保存</li><li>登録日時を自動記録</li><li>保存した履歴を一覧表示</li></ul></div></article><article class="detail-feature"><figure class="feature-picture"><img alt="ダウンロードした呪文履歴のExcelファイル" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" src="image/hp-excel.jpg"/><div class="image-placeholder" hidden="">画像：Excel形式でダウンロード<br/>image/hp-excel.jpg</div><figcaption>Excel形式でダウンロード</figcaption></figure><div class="feature-copy"><p class="small-number">FEATURE 04</p><h3>学習履歴のExcel出力</h3><p>履歴に保存した呪文名・英文・日本語訳・単語の意味をopenpyxlでExcelファイルにまとめ、ダウンロードできるようにしました。</p><ul><li>SQLiteから履歴データを取得</li><li>openpyxlで見出しと列幅を設定</li><li>Excel形式でファイルをダウンロード</li></ul></div></article></section>
+      <div class="note-panel" style="margin-top:17px">
+        <h3>操作の流れ</h3>
 
+        <div class="flow" aria-label="デモ操作手順">
+          <div class="flow-step">1. ユーザー名入力</div>
+          <div class="flow-step">2. 呪文・英文取得</div>
+          <div class="flow-step">3. 日本語訳・単語確認</div>
+          <div class="flow-step">4. 履歴保存・Excel出力</div>
+        </div>
+      </div>
+    </section>
 
+    <section class="detail" id="video">
+      <div class="section-head">
+        <p class="section-no">04 / VIDEO</p>
+        <h2>操作デモ動画</h2>
+        <p class="section-lead">
+          呪文の取得から単語検索、履歴保存までの操作を動画で紹介します。
+        </p>
+      </div>
 
-    <section class="detail" id="demo"><div class="section-head"><p class="section-no">03 / LIVE DEMO</p><h2>デモサイトを試す</h2><p class="section-lead">公開中のWebアプリから、呪文の取得・英単語の検索・学習履歴の保存をお試しいただけます。</p></div><div class="demo-grid"><div class="demo-panel"><h3>デモサイト</h3><p>下のボタンから公開中のFlaskアプリを開けます。</p><a class="btn btn-blue" href="https://harry-potter-app-kkv4.onrender.com/" rel="noopener noreferrer" target="_blank">デモサイトを開く ↗</a><p class="hint">※ 外部の翻訳サービスや辞書APIの応答状況によって、一部の表示に時間がかかる場合があります。</p></div><div class="demo-panel"><h3>使い方</h3><p>ユーザー名を入力して呪文を表示し、英語説明文と日本語訳、単語の意味を確認できます。学習した内容を履歴に保存し、Excel形式でダウンロードできます。</p><div class="warn">公開環境で日本語訳が表示されない場合は、下の操作デモ動画でも動作をご確認いただけます。</div></div></div><div class="note-panel" style="margin-top:17px"><h3>操作の流れ</h3><div aria-label="デモ操作手順" class="flow"><div class="flow-step">1. ユーザー名入力</div><div class="flow-step">2. 呪文・英文取得</div><div class="flow-step">3. 単語の意味確認</div><div class="flow-step">4. 履歴保存・Excel出力</div></div></div></section>
+      <div class="video-panel">
+        <div class="video-wrap">
+          <video controls
+                 preload="metadata"
+                 playsinline
+                 poster="image/hp-spell.jpg"
+                 aria-label="ハリー・ポッター英語学習アプリ操作デモ動画">
+            <source src="video/hp-demo.mp4" type="video/mp4">
+            <p class="video-fallback">
+              動画を再生できない場合は、対応ブラウザでご確認ください。
+            </p>
+          </video>
+        </div>
 
+        <p class="hint">
+          収録内容：呪文取得 → 日本語訳・単語の確認 → 履歴保存 → Excel出力。
+        </p>
+      </div>
+    </section>
 
+    <section class="detail" id="development">
+      <div class="section-head">
+        <p class="section-no">05 / DEVELOPMENT</p>
+        <h2>開発で工夫したこと</h2>
+      </div>
 
-    <section class="detail" id="video"><div class="section-head"><p class="section-no">04 / VIDEO</p><h2>操作デモ動画</h2><p class="section-lead">呪文の取得から単語検索、履歴保存までの操作を動画で紹介します。</p></div><div class="video-panel"><div class="video-wrap"><video aria-label="ハリー・ポッター英語学習アプリ操作デモ動画" controls="" playsinline="" poster="image/hp-spell.jpg" preload="metadata"><source src="video/hp-demo.mp4" type="video/mp4"/><p class="video-fallback">動画を再生できない場合は、対応ブラウザでご確認ください。</p></video></div><p class="hint">収録例：呪文取得 → 日本語訳・単語の確認 → 履歴保存 → Excel出力。※動画ファイルはご自身で配置してください。</p></div></section>
+      <div class="two-col">
+        <article class="info-card">
+          <h3>複数の外部APIを組み合わせた構成</h3>
+          <p>
+            呪文情報の取得、Gemini APIによる翻訳、辞書APIによる単語検索を組み合わせ、
+            一つの画面で英語学習を進められるようにしました。
+          </p>
+        </article>
 
+        <article class="info-card">
+          <h3>英単語の前処理</h3>
+          <p>
+            正規表現で取り出した単語の重複や基本語を除外し、
+            NLTKで原形化してから辞書APIで調べる処理を実装しました。
+          </p>
+        </article>
 
+        <article class="info-card">
+          <h3>JavaScriptの活用</h3>
+          <p>
+            フロントエンドにはJavaScriptも使用し、
+            Python・Flaskによるサーバー側の処理と組み合わせてWebアプリの画面を構成しました。
+          </p>
+        </article>
 
-    <section class="detail" id="development"><div class="section-head"><p class="section-no">05 / DEVELOPMENT</p><h2>開発で工夫したこと</h2></div><div class="two-col"><article class="info-card"><h3>複数の外部サービスの連携</h3><p>呪文の取得、英語説明文の翻訳、単語の意味検索を組み合わせ、一つの画面で学習できるようにしました。</p></article><article class="info-card"><h3>英単語の前処理</h3><p>正規表現で取り出した単語の重複や基本語を除外し、NLTKで原形化してから辞書APIで調べる処理を実装しました。</p></article><article class="info-card"><h3>JavaScriptの活用</h3><p>フロントエンドにはJavaScriptも使用しています。Python・Flaskによるサーバー側の処理と組み合わせ、Webアプリの画面を構成しました。</p></article><article class="info-card"><h3>Excel形式での出力</h3><p>openpyxlを利用し、保存した学習履歴をExcelファイルとして生成・ダウンロードできるようにしました。</p></article></div></section>
+        <article class="info-card">
+          <h3>Excel形式での出力</h3>
+          <p>
+            openpyxlを利用し、保存した学習履歴をExcelファイルとして生成し、
+            ダウンロードできるようにしました。
+          </p>
+        </article>
+      </div>
+    </section>
 
+    <section class="detail" id="ai">
+      <div class="section-head">
+        <p class="section-no">06 / GENERATIVE AI</p>
+        <h2>生成AIの活用</h2>
+        <p class="section-lead">
+          アプリ内の翻訳機能と、開発過程での生成AI活用を分けて紹介します。
+        </p>
+      </div>
 
+      <div class="two-col">
+        <article class="info-card">
+          <span class="ai-label">アプリ内のAI機能</span>
+          <h3>Gemini APIによる日本語翻訳</h3>
+          <p>
+            Harry Potter APIから取得した英語説明文をGemini APIに渡し、
+            日本語訳を生成して原文とあわせて表示しています。
+          </p>
+        </article>
 
-    
+        <article class="info-card">
+          <span class="ai-label">開発過程のAI活用</span>
+          <h3>実装方法の検討・エラー調査の補助</h3>
+          <p>
+            生成AIを、実装方法の検討やエラー原因の整理を行うための補助として活用しました。
+            提案された内容は自分で処理を確認し、実際の動作を見ながら修正して開発を進めました。
+          </p>
+        </article>
+      </div>
+    </section>
 
+    <section class="detail" id="future">
+      <div class="section-head">
+        <p class="section-no">07 / NEXT STEPS</p>
+        <h2>今後の改善点</h2>
+      </div>
 
+      <div class="callout">
+        <p>
+          今後は、外部APIやGemini APIの取得失敗時にも利用者が状況を把握できるよう、
+          エラーメッセージや例外処理をより分かりやすくしたいと考えています。
+        </p>
 
-    <section class="detail" id="ai"><div class="section-head"><p class="section-no">06 / GENERATIVE AI</p><h2>生成AIの活用</h2><p class="section-lead">外部サービスを用いた翻訳・辞書検索と、開発時の生成AI利用は区別して紹介します。</p></div><div class="two-col"><article class="info-card"><span class="ai-label">アプリ内の外部サービス</span><h3>翻訳サービス・辞書APIとの連携</h3><p>英語説明文の日本語訳はdeep-translatorを、英単語の意味検索は外部の辞書APIを利用しています。貼り付けたコードからはアプリ内で生成AIモデルを直接呼び出す実装は確認できないため、生成AI機能とは区別しています。</p></article><article class="info-card"><span class="ai-label">開発過程の生成AI活用</span><h3>実装方法の検討・エラー調査の補助</h3><p>開発で生成AIを使用した範囲に合わせて、実際に相談した内容や、自分で確認・修正した点を記載してください。</p></article></div></section>
+        <p style="margin-bottom:0">
+          また、学習履歴の検索や絞り込みなどを追加し、
+          保存した内容をより振り返りやすい英語学習アプリへ改善していきたいです。
+        </p>
+      </div>
 
+      <div class="actions">
+        <a class="btn btn-blue"
+           href="https://harry-potter-app-kkv4.onrender.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          デモサイトを見る ↗
+        </a>
 
+        <a class="btn"
+           style="background:#fff;border-color:#c9d5ec;color:#243765"
+           href="index.html#point3">
+          ← Works一覧へ戻る
+        </a>
+      </div>
+    </section>
 
-    <section class="detail" id="future"><div class="section-head"><p class="section-no">07 / NEXT STEPS</p><h2>今後の改善点</h2></div><div class="callout"><p>公開環境で日本語訳が表示されない場合があるため、翻訳サービスへの接続や例外処理を見直し、安定して学習できるように改善したいと考えています。</p><p style="margin-bottom:0">また、外部APIの取得失敗時に適切な案内を表示するなど、操作時の分かりやすさも改善したいと考えています。</p></div><div class="actions"><a class="btn btn-blue" href="https://harry-potter-app-kkv4.onrender.com/" rel="noopener noreferrer" target="_blank">デモサイトを見る ↗</a><a class="btn" href="index.html#point3" style="background:#fff;border-color:#c9d5ec;color:#243765">← Works一覧へ戻る</a></div></section>
+  </main>
 
-  </main>
+  <footer>
+    <div class="container">
+      © Portfolio — <a href="index.html#point3">Works一覧に戻る</a>
+    </div>
+  </footer>
 
-  <footer><div class="container">© Portfolio — <a href="index.html#point3">Works一覧に戻る</a></div></footer>
 </body>
 </html>
