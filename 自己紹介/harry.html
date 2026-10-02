@@ -24,8 +24,8 @@
       <p class="hero-sub">呪文を題材にした英語学習Webアプリ</p>
 
       <p class="hero-desc">
-        Harry Potter APIから取得した呪文の英語説明文をGemini APIで日本語に翻訳し、
-        英文から抽出した単語の意味を調べながら学習できるWebアプリです。
+        Harry Potter APIから取得した呪文の英語説明文を日本語に翻訳し、
+        英文から抽出した単語の意味と合わせて学習できるWebアプリです。
         学習した呪文は履歴として保存し、Excel形式でダウンロードできます。
       </p>
 
@@ -64,7 +64,6 @@
     <div class="container">
       <a href="#overview">概要</a>
       <a href="#feature-details">機能の詳細</a>
-      <a href="#demo">デモ体験</a>
       <a href="#video">操作動画</a>
       <a href="#development">開発の工夫</a>
       <a href="#ai">生成AI活用</a>
@@ -101,7 +100,7 @@
 
           <div>
             <dt>開発言語・フレームワーク</dt>
-            <dd>Python / Flask / JavaScript</dd>
+            <dd>Python / Flask / JavaScript / SQLite</dd>
           </div>
 
           <div>
@@ -122,85 +121,57 @@
       </div>
 
       <article class="detail-feature">
-        <figure class="feature-picture">
-          <img src="image/hp-spell.jpg"
-               alt="呪文名、英語説明文、日本語訳を表示した画面"
-               loading="lazy"
-               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <div class="image-placeholder" hidden>
-            画像：呪文情報と日本語訳<br>
-            image/hp-spell.jpg
+          <figure class="feature-picture">
+              <img
+                  src="image/hp-spell.jpg"
+                  alt="呪文情報、日本語訳、英単語の意味を表示した画面"
+             
+              >
+              
+              <figcaption>呪文情報・日本語訳・英単語学習</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 01</p>
+
+              <h3>呪文情報の取得・翻訳・英単語学習</h3>
+
+              <p>
+                  Harry Potter APIから呪文名と英語の説明文を取得し、
+                  ランダムに選んだ呪文を表示します。
+                  取得した英語説明文はGemini APIを利用して日本語へ翻訳し、
+                  英文と日本語訳を見比べながら内容を確認できるようにしました。
+              </p>
+
+              <p>
+                  さらに、英語説明文から正規表現を使って英単語を抽出し、
+                  重複する単語や短い単語、一部の基本語を除外しています。
+                  NLTKを利用して動詞・名詞・形容詞の原形候補を作成し、
+                  辞書APIから日本語の意味を取得することで、
+                  呪文を題材に英単語も学習できる構成にしました。
+              </p>
+
+              <ul>
+                  <li>Harry Potter APIから呪文情報を取得</li>
+                  <li>ランダムに一つの呪文を選択して表示</li>
+                  <li>Gemini APIによる英語説明文の日本語翻訳</li>
+                  <li>正規表現による英単語の抽出・不要語の除外</li>
+                  <li>NLTKによる単語の原形化</li>
+                  <li>辞書APIを利用した日本語の意味の取得</li>
+                  <li>英文・日本語訳・英単語をまとめて学習</li>
+              </ul>
           </div>
-          <figcaption>呪文情報と日本語訳</figcaption>
-        </figure>
-
-        <div class="feature-copy">
-          <p class="small-number">FEATURE 01</p>
-          <h3>呪文情報の取得・日本語訳</h3>
-
-          <p>
-            Harry Potter APIから呪文の名前と英語説明文を取得し、
-            ランダムに選んだ呪文を表示します。
-            取得した英語説明文はGemini APIで日本語に翻訳し、
-            原文と日本語訳をあわせて確認できるようにしました。
-          </p>
-
-          <ul>
-            <li>外部APIから呪文情報を取得</li>
-            <li>ランダムに一つの呪文を選択</li>
-            <li>Gemini APIによる日本語翻訳</li>
-            <li>英語説明文と日本語訳を表示</li>
-          </ul>
-        </div>
       </article>
-
-      <article class="detail-feature">
-        <figure class="feature-picture">
-          <img src="image/hp-words.jpg"
-               alt="英文から抽出した英単語と日本語の意味の画面"
-               loading="lazy"
-               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <div class="image-placeholder" hidden>
-            画像：英単語の抽出と意味の検索<br>
-            image/hp-words.jpg
-          </div>
-          <figcaption>英単語の抽出と意味の検索</figcaption>
-        </figure>
-
-        <div class="feature-copy">
-          <p class="small-number">FEATURE 02</p>
-          <h3>英単語の抽出・意味の検索</h3>
-
-          <p>
-            説明文から正規表現で英単語を取り出し、
-            重複・短い単語・一部の基本語を除外します。
-            NLTKで動詞・名詞・形容詞の原形候補を作り、
-            辞書APIから日本語の意味を検索します。
-          </p>
-
-          <ul>
-            <li>正規表現による英単語の抽出</li>
-            <li>NLTKによる原形化</li>
-            <li>辞書APIを利用した日本語の意味の取得</li>
-          </ul>
-        </div>
-      </article>
-
       <article class="detail-feature">
         <figure class="feature-picture">
           <img src="image/hp-history.jpg"
-               alt="保存した呪文を一覧表示した画面"
-               loading="lazy"
-               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <div class="image-placeholder" hidden>
-            画像：SQLiteで学習履歴を保存<br>
-            image/hp-history.jpg
-          </div>
+               alt="保存した呪文を一覧表示した画面">
+               
           <figcaption>SQLiteで学習履歴を保存</figcaption>
         </figure>
 
         <div class="feature-copy">
-          <p class="small-number">FEATURE 03</p>
+          <p class="small-number">FEATURE 02</p>
           <h3>学習履歴の保存・閲覧</h3>
 
           <p>
@@ -219,18 +190,13 @@
       <article class="detail-feature">
         <figure class="feature-picture">
           <img src="image/hp-excel.jpg"
-               alt="ダウンロードした呪文履歴のExcelファイル"
-               loading="lazy"
-               onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <div class="image-placeholder" hidden>
-            画像：Excel形式でダウンロード<br>
-            image/hp-excel.jpg
-          </div>
+               alt="ダウンロードした呪文履歴のExcelファイル">
+               
           <figcaption>Excel形式でダウンロード</figcaption>
         </figure>
 
         <div class="feature-copy">
-          <p class="small-number">FEATURE 04</p>
+          <p class="small-number">FEATURE 03</p>
           <h3>学習履歴のExcel出力</h3>
 
           <p>
@@ -247,60 +213,16 @@
       </article>
     </section>
 
-    <section class="detail" id="demo">
-      <div class="section-head">
-        <p class="section-no">03 / LIVE DEMO</p>
-        <h2>デモサイトを試す</h2>
-        <p class="section-lead">
-          公開中のWebアプリから、呪文の取得・英単語の検索・学習履歴の保存をお試しいただけます。
-        </p>
-      </div>
-
-      <div class="demo-grid">
-        <div class="demo-panel">
-          <h3>デモサイト</h3>
-          <p>下のボタンから公開中のFlaskアプリを開けます。</p>
-
-          <a class="btn btn-blue"
-             href="https://harry-potter-app-kkv4.onrender.com/"
-             target="_blank"
-             rel="noopener noreferrer">
-            デモサイトを開く ↗
-          </a>
-
-          <p class="hint">
-            ※ 外部APIやGemini APIの応答状況によって、表示に時間がかかる場合があります。
-          </p>
-        </div>
-
-        <div class="demo-panel">
-          <h3>使い方</h3>
-          <p>
-            ユーザー名を入力して呪文を表示し、
-            英語説明文と日本語訳、単語の意味を確認できます。
-            学習した内容は履歴に保存し、Excel形式でダウンロードできます。
-          </p>
-        </div>
-      </div>
-
-      <div class="note-panel" style="margin-top:17px">
-        <h3>操作の流れ</h3>
-
-        <div class="flow" aria-label="デモ操作手順">
-          <div class="flow-step">1. ユーザー名入力</div>
-          <div class="flow-step">2. 呪文・英文取得</div>
-          <div class="flow-step">3. 日本語訳・単語確認</div>
-          <div class="flow-step">4. 履歴保存・Excel出力</div>
-        </div>
-      </div>
-    </section>
-
     <section class="detail" id="video">
       <div class="section-head">
-        <p class="section-no">04 / VIDEO</p>
+        <p class="section-no">03 / VIDEO</p>
         <h2>操作デモ動画</h2>
-        <p class="section-lead">
-          呪文の取得から単語検索、履歴保存までの操作を動画で紹介します。
+        <p>
+          無料枠のGemini APIを利用しているため、
+          利用状況によっては翻訳処理に時間がかかったり、
+          一時的に正常に動作しない場合があります。
+          その場合にも実際の操作手順や動作を確認できるよう、
+          アプリの操作動画を掲載しています。
         </p>
       </div>
 
@@ -326,7 +248,7 @@
 
     <section class="detail" id="development">
       <div class="section-head">
-        <p class="section-no">05 / DEVELOPMENT</p>
+        <p class="section-no">04 / DEVELOPMENT</p>
         <h2>開発で工夫したこと</h2>
       </div>
 
@@ -367,7 +289,7 @@
 
     <section class="detail" id="ai">
       <div class="section-head">
-        <p class="section-no">06 / GENERATIVE AI</p>
+        <p class="section-no">05 / GENERATIVE AI</p>
         <h2>生成AIの活用</h2>
         <p class="section-lead">
           アプリ内の翻訳機能と、開発過程での生成AI活用を分けて紹介します。
@@ -397,7 +319,7 @@
 
     <section class="detail" id="future">
       <div class="section-head">
-        <p class="section-no">07 / NEXT STEPS</p>
+        <p class="section-no">06 / NEXT STEPS</p>
         <h2>今後の改善点</h2>
       </div>
 

@@ -29,7 +29,7 @@
     .section-head{margin-bottom:27px}.section-no{margin:0 0 2px;font-weight:800;font-size:1.25rem;letter-spacing:.15em;color:var(--blue)}
     h2{margin:0;font-size:clamp(2.5rem,4vw,3.5rem);line-height:1.4;color:var(--navy)}
     h3{margin:0 0 12px;color:var(--navy);font-size:2.1rem;line-height:1.5}
-    p{margin:0 0 16px}.section-lead{max-width:850px;color:var(--muted)}
+    p{margin:20px 0px 16px}.section-lead{max-width:850px;color:var(--muted)}
     .summary{background:#fff;border:1px solid var(--line);border-radius:13px;padding:clamp(20px,4vw,40px)}
     .meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:20px 0 0}.meta div{border-top:1px solid var(--line);padding-top:10px}.meta dt{font-size:1.2rem;color:var(--muted)}.meta dd{margin:3px 0 0;font-size:1.4rem;font-weight:650}
     .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
